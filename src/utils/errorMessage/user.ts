@@ -5,7 +5,7 @@ export default {
   },
   userDontExist: {
     status: 404,
-    message: "user dont exist",
+    message: "user don't exist",
   },
   wrongPassword: {
     status: 403,

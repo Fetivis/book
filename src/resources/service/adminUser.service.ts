@@ -68,7 +68,7 @@ class UserAdminService {
     // this is part of code for admin to update his book
     // you can comment this because there is another endpoint in book.service for update your book
     else {
-      response = await this.BookService.UpdateBook(req);
+      response = await this.BookService.updateBook(req);
 
       return response;
     }

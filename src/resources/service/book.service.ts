@@ -6,7 +6,7 @@ import { Request } from "express";
 class BookService {
   Book = model<IBook>("Book", bookSchema);
 
-  public CreateBook = async (req: Request) => {
+  public createBook = async (req: Request) => {
     try {
       if (req.user.email) {
         const newBook = await this.Book.create({
@@ -20,7 +20,7 @@ class BookService {
     }
   };
 
-  public RemoveBook = async (req: Request) => {
+  public removeBook = async (req: Request) => {
     try {
       const {title} = req.params;
       const user = req.user.email;
@@ -34,7 +34,7 @@ class BookService {
     }
   };
 
-  public UpdateBook = async (req: Request) => {
+  public updateBook = async (req: Request) => {
     const user = req.user.email;
 
     const response = await this.Book.updateMany(

@@ -67,7 +67,10 @@ class UserController implements Controller {
       await this.UserService.deactivatedUser(req.user.email);
       res.status(200).send("User is deactivated");
     } catch (err: any) {
-      res.status(400).send(`${err}`);
+      next({
+        status: UserErrors[err.message]?.status,
+        message: UserErrors[err.message]?.message,
+      });
     }
   };
 }

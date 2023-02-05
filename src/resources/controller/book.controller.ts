@@ -41,9 +41,9 @@ class UserController implements Controller {
     next: NextFunction
   ): Promise<Response | void> => {
     try {
-      const book = await this.BookService.CreateBook(req);
+      const book = await this.BookService.createBook(req);
 
-      res.status(201).json({ book });
+      res.status(201).json({ book, message:"Book is created" });
     } catch (err: any) {
       next({
         status: bookError[err.message]?.status,
@@ -58,7 +58,7 @@ class UserController implements Controller {
     next: NextFunction
   ): Promise<Response | void> => {
     try {
-      await this.BookService.RemoveBook(req);
+      await this.BookService.removeBook(req);
       res.status(200).json(`book is removed`);
     } catch (err: any) {
       next({
@@ -74,7 +74,7 @@ class UserController implements Controller {
     next: NextFunction
   ): Promise<Response | void> => {
     try {
-      const book = await this.BookService.UpdateBook(req);
+      const book = await this.BookService.updateBook(req);
       res.status(200).json(`book is updated: ${book} `);
     } catch (err: any) {
       next({

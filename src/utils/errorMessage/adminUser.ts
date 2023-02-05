@@ -13,7 +13,7 @@ export default {
   },
   adminBook: {
     status: 401,
-    message: "Can't delete a admin book",
+    message: "Can't delete admin book",
   },
   errorEmail: {
     status: 404,

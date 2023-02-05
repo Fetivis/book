@@ -47,7 +47,7 @@ class App {
     );
   }
 
-  // all midedelware that express app need!
+  // all middelware that express app need!
   private initialzeMiddleware(): void {
     this.express.use(cors());
     this.express.use(express.json());
