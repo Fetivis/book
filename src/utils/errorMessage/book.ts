@@ -5,7 +5,7 @@ export default {
   },
   failToRemoveBook: {
     status: 404,
-    message: "Book is not created",
+    message: "You don't have book with that title!",
   },
   noMatchedTitle: {
     status: 404,

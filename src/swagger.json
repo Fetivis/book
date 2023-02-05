@@ -150,13 +150,21 @@
         "deprecated": false
       }
     },
-    "/book/delete": {
+    "/book/delete/{title}": {
       "delete": {
         "tags": ["Book-controller"],
         "summary": "Delete Book",
         "description": "Delete a author Book!",
         "produces": ["application/json"],
-        "parameters": [],
+        "parameters": [
+          {
+            "name":"title",
+            "in":"path",
+            "description":"Title of author book",
+            "type":"string",
+            "example":"wild forest...."
+          }
+        ],
         "responses": {
           "201": {
             "description": "successful operation",

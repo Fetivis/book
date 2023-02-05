@@ -22,8 +22,9 @@ class BookService {
 
   public RemoveBook = async (req: Request) => {
     try {
+      const {title} = req.params;
       const user = req.user.email;
-      const response = await this.Book.deleteMany({ publisher: user });
+      const response = await this.Book.deleteMany({ publisher: user, title: title });
       if (response.deletedCount == 0) {
         throw new Error(`noMatchedTitle`);
       }

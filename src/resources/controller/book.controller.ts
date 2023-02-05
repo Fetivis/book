@@ -21,8 +21,9 @@ class UserController implements Controller {
       this.createBook
     );
 
+      // example of routing params
     this.router.delete(
-      `${this.path}/delete`,
+      `${this.path}/delete/:title`,
       authentificatedMiddelware,
       this.RemoveBook
     );
